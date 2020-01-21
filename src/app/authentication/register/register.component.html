@@ -1,0 +1,114 @@
+
+
+<div class="authentication_div clearfix">
+    <particles class="loginbg" [width]="width" [height]="height" [params]="params"></particles>
+    <div class="loginMain container mt-5">
+        <!-- <div class="clear_40"></div> -->
+        <div class="row mt-5 mb-5 tq_box_shadow">
+            <div class="col-md-7 p-0">
+                <div class="card">
+
+                    <h5 class="card-header text-center py-4">
+                        <strong>Register</strong>
+                    </h5>
+
+                  
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+                        <form class="mx-auto text-center" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-6 aniInput_cont">
+                                    <input class="form-control"  type="text" formControlName="firstName"
+                                        placeholder="First Name"
+                                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+                                    <div *ngIf="submitted && f.firstName.errors">
+                                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 aniInput_cont">
+                                    <input class="form-control" formControlName="lastName" placeholder="Last Name"
+                                        type="text" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 aniInput_cont">
+                                    <input class="form-control"  formControlName="Email" placeholder="Emaild" type="email"
+                                        [ngClass]="{ 'is-invalid': submitted && f.Emaild.errors }" />
+                                    <div *ngIf="submitted && f.Emaild.errors" class="invalid-feedback">
+                                        <div *ngIf="f.Emaild.errors.required">Email is required</div>
+                                        <div *ngIf="f.Emaild.errors.email">Email must be a valid email address</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 aniInput_cont"> <input class="form-control" id="aniInput" formControlName="phoneNo"
+                                        placeholder="Phone Number" type="text" required=""></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 aniInput_cont">
+                                    <select class="w-100 select_style" formControlName="gender">
+                                        <option selected>Select Gender</option>
+                                        <option *ngFor="let g of genders">
+                                            {{g.abbrev}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 aniInput_cont">
+                                    <select class="w-100 select_style" formControlName="role">
+                                        <option selected>Who Are You? </option>
+                                        <option *ngFor="let role of roles">
+                                            {{role.name}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6"> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 aniInput_cont">
+                                    <input class="form-control "  formControlName="password" placeholder="Password"
+                                        type="password"
+                                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && registerForm.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">Password must be at least 6
+                                            characters</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 aniInput_cont"> <input class="form-control"
+                                        formControlName="confirmPassword" placeholder="Confirm Password"
+                                        type="password" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+                                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <button class="btn_tq_grad_1 w-100 tq_button mx-auto">Submit</button>
+                            <div class="clear_10"></div>
+                            <a class="float-right" routerLink="/login" routerLinkActive="active">Back To Login</a>
+                            <div class="clear_30"></div>
+                        </form>
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-5 p-0">
+                <div class="card h-100 login_image clearfix  form_login_page">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

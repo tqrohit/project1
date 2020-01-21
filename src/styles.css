@@ -1,0 +1,452 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+
+.main-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.alt-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #2b2b2b;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0.3px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.loginbg .particles-container {
+    background: #3264f5;
+    background: -moz-linear-gradient(left, #3264f5 2%, #7202bb 82%);
+    background: -webkit-linear-gradient(left, #3264f5 2%, #7202bb 82%);
+    background: linear-gradient(135deg, #682d8e 0%, #e21567 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#3264f5', endColorstr='#7202bb', GradientType=1);
+}
+
+particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+::host .partiparticles-container canvas {
+    height: 100vh !important;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.tq_box_shadow {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19)!important;
+}
+
+.form_field {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.authentication_div .card,
+.authentication_div .card-header {
+    border-radius: 0;
+    border: none;
+}
+
+input.cust_inp_1 {
+    margin: 20px auto;
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 10px 0;
+    border-bottom: solid 1px #e21567;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #682d8e 4%);
+    background-position: -425px 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #0e6252;
+}
+
+input.cust_inp_date{
+    margin: 20px auto;
+    border-bottom: solid 1px #e21567;
+}
+
+input.cust_inp_1:focus,
+input.cust_inp_1:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+}
+
+input.cust_inp_1:focus::-webkit-input-placeholder,
+input.cust_inp_1:valid::-webkit-input-placeholder {
+    color: #e21567;
+    font-size: 11px;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    visibility: visible !important;
+}
+
+.aniInput_cont #aniInput{
+    margin: 20px auto;
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 10px 0;
+    border-bottom: solid 1px #e21567;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #682d8e 4%);
+    background-position: -425px 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #0e6252;
+}
+
+.aniInput_cont #aniInput:focus,
+.aniInput_cont #aniInput:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+}
+
+.aniInput_cont #aniInput:focus::-webkit-input-placeholder,
+.aniInput_cont #aniInput:valid::-webkit-input-placeholder {
+    color: #e21567;
+    font-size: 11px;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    visibility: visible !important;
+}
+
+
+.tq_button {
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 6px;
+    width: 200px;
+    color: white;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tq_button:hover {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tq_button_sm {
+    padding: 3px 5px;
+    height: 25px;
+    width: auto;
+}
+
+.btn_tq_grad_1 {
+    background: #3264f5;
+    background: -moz-linear-gradient(left, #3264f5 2%, #7202bb 82%);
+    background: -webkit-linear-gradient(left, #3264f5 2%, #7202bb 82%);
+    background: linear-gradient(135deg, #682d8e 0%, #e21567 100%);
+}
+
+.btn_tq_bg {
+    background: #3264f5;
+}
+
+.btn_tq_bg_gray_1 {
+    background: #a2a2a2;
+}
+
+.pos_absolute{
+    position: absolute;
+}
+
+.search-hero i{
+    top: 216px;
+    left: 400px;
+}
+
+.search-hero input{
+    padding-left: 50px;
+}
+
+ul.filterby_date li{
+    display: inline-block;
+    text-align: center;
+     padding: 15px; 
+}
+/* ul.filterby_date li a.active{
+   border-bottom: 5px solid orange; 
+  } */
+
+  ul.filterby_date li a, ul.nav li a:visited {
+    color:#FFF !important;
+   
+}
+
+ul.filterby_date li a:hover, ul.nav li a:active {
+    color:#4ec7f3 !important;
+   
+}
+
+ul.filterby_date li.active a {
+    color:#FFF !important;
+   
+}
+
+has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+	
+/* a.nav-link.active {
+    border-bottom: 3px solid white;
+} */
+
+.clear_10 {
+    height: 10px;
+    clear: both;
+}
+
+.clear_20 {
+    height: 20px;
+    clear: both;
+}
+
+.clear_30 {
+    height: 30px;
+    clear: both;
+}
+
+.clear_40 {
+    height: 40px;
+    clear: both;
+}
+
+.clear_50 {
+    height: 50px;
+    clear: both;
+}
+
+.select_style {
+    margin: 20px auto;
+    padding: 10px 0;
+    border: none;
+    border-bottom: none;
+    /* border-bottom: 1px solid red; */
+    border-bottom: solid 1px #e21567;
+    outline: none;
+    color: #757070;
+}
+
+.btn-outline-dark {
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.btn-outline-dark:hover {
+    border-color: #343a40;
+}
+
+.bg_grad_tq {
+    background: linear-gradient(135deg, #682d8e 0%, #e21567 100%);
+}
+
+.bg_gray_2 {
+    background-color: #e6e6e6;
+}
+
+.logo_height {
+    height: 50px;
+}
+
+.nav_icon_round_style {
+    padding: 3px 5px;
+    background-color: #682d8e;
+}
+
+.fwt_300 {
+    font-weight: 300;
+}
+
+.fwt_500 {
+    font-weight: 500;
+}
+
+.fwt_700 {
+    font-weight: 700;
+}
+
+.light_gray1 {
+    color: #a7a7a7;
+}
+
+.student_list .table td,
+.student_list .table th {
+    padding: 5px;
+}
+
+#flip {
+    /* height: 50px; */
+    overflow: hidden;
+}
+
+#flip>div>div {
+    color: #fff;
+    padding: 4px 12px;
+    height: 45px;
+    margin-bottom: 45px;
+    display: inline-block;
+}
+
+#flip div:first-child {
+    animation: show 0.4s linear 1;
+}
+
+#flip div div {
+    background: #42c58a;
+}
+
+#flip div:first-child div {
+    background: #4ec7f3;
+}
+
+#flip div:last-child div {
+    background: #DC143C;
+}
+
+.form_other_field {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 10px;
+}
+
+.form_other_field input {
+    background: #e9ecef;
+}
+
+.otherfields input {
+    margin: 0;
+    background-color: #fff6f9;
+}
+
+@keyframes show {
+    0% {
+        margin-top: -270px;
+    }
+    5% {
+        margin-top: -180px;
+    }
+    33% {
+        margin-top: -180px;
+    }
+    38% {
+        margin-top: -90px;
+    }
+    66% {
+        margin-top: -90px;
+    }
+    71% {
+        margin-top: 0px;
+    }
+    99.99% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: -270px;
+    }
+}
+
+.selected_students_cart {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.selected_students_cart i {
+    font-size: 34px;
+    color: #682d8e;
+}
+
+
+/* custom scrollbar */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #e21567;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #682d8e;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+    .card-body {
+        padding: 5px;
+    }
+    .select_style {
+        width: 100% !important;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

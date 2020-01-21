@@ -1,0 +1,65 @@
+
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    color: #405065;
+  }
+  
+  .search-hero {
+     max-width: 500px; 
+     padding: 20px 0;  
+      margin:auto; 
+  }
+  
+  .form-control {
+    box-shadow: 0 10px 40px 0 #B0C1D9;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+
+  .search-container {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: flex-end;
+ 
+  }
+
+  .search-container > * {
+    display: inline-block;
+  }
+
+
+  /* Structure */    
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+/* mat_date_pick {
+  border: 1px solid black; 
+  padding: 25px 50px 75px 100px;
+  display: grid;
+   background-color: lightblue; 
+} */
+
+/* form{
+  padding-bottom: 30px;
+} */
+.primary{
+  background: orange;
+  color: white;
+}
+
+.date-block{
+  display: flex;
+}
+.date-block__list{
+  flex-basis: 150px;
+  margin-right: 15px;
+}

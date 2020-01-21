@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg_grad_tq tq_box_shadow">
+    <a class="navbar-brand" routerLink="/dashboard">
+        <img class="logo_height" src="../../../assets/images/tq-logo.png">
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink routerLinkActive="active">Student Evaluation</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/addDrive" routerLinkActive="active">Drive Tracker</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink routerLinkActive="active">Post Placement Tracker</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink routerLinkActive="active">Cheque Tracker</a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-white" routerLink routerLinkActive="active">
+                    <span class="tq_box_shadow nav_icon_round_style rounded-circle">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span> Profile
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/login" routerLinkActive="active">
+                    <span class="tq_box_shadow nav_icon_round_style rounded-circle">
+                        <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                    </span> Logout
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

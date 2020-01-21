@@ -1,0 +1,114 @@
+<app-navbar></app-navbar>
+
+
+<div class="container">
+
+  <div class="row" style="margin-top: auto;">
+
+    <div class="col-md-3 " >
+      <mat-form-field>
+        <mat-label>Drive By Days</mat-label>
+        <mat-select [(value)]="selectedFlag" (selectionChange)="getDriveListByFilterFlag($event)">
+          <mat-option value="0">Select Day</mat-option> 
+          <mat-option value="1">Todays</mat-option>
+          <mat-option value="2">Tomorrows</mat-option>
+          <mat-option value="3">Yesterdays</mat-option>
+          <mat-option value="4">Drive On Date</mat-option>
+          <mat-option value="5">Drive Date Range</mat-option>
+          <mat-option value="6">All</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-9" *ngIf="isShownOnDate">
+      <div class="row">
+       
+        <div class="col-md-4">
+          <mat-form-field color="accent">
+          <mat-label>Drive By Date</mat-label>
+          <input matInput [matDatepicker]="myPicker3" [(ngModel)]="selectedDate" readonly>
+          <mat-datepicker-toggle matSuffix [for]="myPicker3"></mat-datepicker-toggle>
+          <mat-datepicker #myPicker3 color="primary"></mat-datepicker>
+          </mat-form-field>
+      </div>
+
+      <div class="col-md-4">
+          <button type="submit" class="btn_tq_grad_1 tq_button cust_inp_1" (click)="getDriveListBySingleDate()">Submit</button>
+      </div>
+     
+    </div>
+    </div>
+
+    <div class="col-md-9" *ngIf="isShownOnDateRange">
+          <div class="row">
+          <div class="col-md-4">
+            <mat-form-field color="accent">
+               <mat-label>Start Date</mat-label> 
+              <input matInput [matDatepicker]="myPicker4" [(ngModel)]="startDate" readonly>
+              <mat-datepicker-toggle matSuffix [for]="myPicker4"></mat-datepicker-toggle>
+              <mat-datepicker #myPicker4 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field color="accent">
+               <mat-label>End Date</mat-label>
+              <input matInput [matDatepicker]="myPicker5" [(ngModel)]="endDate"  readonly>
+              <mat-datepicker-toggle matSuffix [for]="myPicker5"></mat-datepicker-toggle>
+              <mat-datepicker #myPicker5 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-4">
+            <button type="submit" class="btn_tq_grad_1 tq_button cust_inp_1" (click)="getDriveListByDateRange()">Submit</button>
+          </div>
+        </div>
+      
+     </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3" style="padding-top: 26px;">
+      <button type="submit" class="btn_tq_grad_1 tq_button cust_inp_1">Add Drive</button>
+    </div>
+
+    <div class="col-md-6">
+      <div class="search-hero has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" autocomplete="on">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="tq_box_shadow">
+    <table class="table table-hover table-responsive-sm">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Postions</th>
+          <th scope="col">Openings</th>
+          <th scope="col">Date</th>
+          <th scope="col">Status</th>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let drive of driveslist | filter:searchText ">
+            <!-- <td>[attr.data-index]="i"</td>  -->
+           <td>{{drive.driveID}}</td>  
+          <td>{{drive.companyName}}</td>
+          <td>{{drive.posName}}</td>
+          <td>{{drive.noOfOpenings}}</td>
+          <td>{{drive.driveDate}} </td>
+          <td>Drive Created</td>
+          <td><button type="button" class="btn_tq_bg_gray_1 btn-sm tq_button tq_button_sm mx-auto">Delete</button>
+          </td>
+          <td><button type="button" class="btn_tq_bg_gray_1 btn-sm tq_button tq_button_sm mx-auto">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

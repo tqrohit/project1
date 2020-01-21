@@ -1,0 +1,381 @@
+<div class="dt_form_div clearfix">
+    <div class="loginMain container">
+        <div class="row mb-5 tq_box_shadow">
+            <div class="col-md-12 p-0">
+                <div class="card">
+                    <!--Card content-->
+                    <div #divtToCloseDropDown class="card-body px-lg-12 pt-0">
+                        <form class="mx-auto text-center" [formGroup]="dtForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col-md-12 fwt_500 text-left"><span>Drive Details</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 form-group">
+                                        <ng-multiselect-dropdown formControlName="compName"
+                                            [placeholder]="'Select Comapany'" [data]="companyNames"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(1,$event)"
+                                            (onDeSelect)="onDeItemSelect(1,$event)" (onSelectAll)="onSelectAll($event)"
+                                            [ngClass]="{ 'is-invalid': submitted && f.compName.errors }" >
+                                        </ng-multiselect-dropdown>
+
+                                        <div class="otherfields showOtherField_1"
+                                            [ngClass]="showOtherField_1 ? 'd-block' : 'd-none'" id=flip>
+                                            <input class="cust_inp_1 bg_gray_1" formControlName="ocomp"
+                                            placeholder="Enter Other Comapany" type="text" required
+                                            [ngClass]="{ 'is-invalid': submitted && f.ocomp.errors }" >
+                                        </div>
+                                        <div *ngIf="submitted && f.compName.errors" class="invalid-feedback">
+                                            <div *ngIf="f.compName.errors.required">Company Name is required</div>
+                                        </div>
+
+                                        <div *ngIf="submitted && f.ocomp.errors" class="invalid-feedback">
+                                            <div *ngIf="f.ocomp.errors.required">Company Name is required</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="posDrive"
+                                            [placeholder]="'Select Position'" [data]="reqPosi"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(2,$event)"
+                                            (onDeSelect)="onDeItemSelect(2,$event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+
+                                        <div class="otherfields showOtherField_2"
+                                            [ngClass]="showOtherField_2 ? 'd-block' : 'd-none'" id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formControlName="opos"
+                                                placeholder="Enter Other Position" type="text" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="driveTech"
+                                            [placeholder]="'Select Technologies'" [data]="reqTechnos"
+                                            [settings]="multiDropdownSettings" (onSelect)="onItemSelect(3,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                        <div class="otherfields" [ngClass]="showOtherField_3 ? 'd-block' : 'd-none'"
+                                            id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formcontrolname="optech"
+                                                placeholder="Enter Other Tech" type="text" required="">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="expReq"
+                                            [placeholder]="'Experienced Required'" [data]="reqExp"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(4,$event)"
+                                            (onDeSelect)="onDeItemSelect(4,$event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+
+                                        <div class="otherfields showOtherField_4"
+                                            [ngClass]="showOtherField_4 ? 'd-block' : 'd-none'" id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formControlName="oexp"
+                                                placeholder="Enter Other Exp" type="text" required="">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="ctcOff" [placeholder]="'CTC Offered'"
+                                            [data]="ctcOffered" [settings]="singleDropdownSettings"
+                                            (onSelect)="onItemSelect(5,$event)" (onDeSelect)="onDeItemSelect(5,$event)"
+                                            (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                        <div class="otherfields showOtherField_5"
+                                            [ngClass]="showOtherField_5 ? 'd-block' : 'd-none'" id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formControlName="octc"
+                                                placeholder="Enter Other CTC" type="text" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4">
+                                        <input class="cust_inp_1" formControlName="bond" placeholder="Bond" type="text"
+                                        [ngClass]="{ 'is-invalid': submitted && f.bond.errors }">
+                                        <div *ngIf="submitted && f.bond.errors" class="invalid-feedback">
+                                            <div *ngIf="f.bond.errors.required">Please Enter Bond</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-3 col-md-4">
+                                        <input class="cust_inp_1" formControlName="noOfResources"
+                                            placeholder="No. of Resources" type="text" 
+                                            [ngClass]="{ 'is-invalid': submitted && f.noOfResources.errors }">
+                                      <div *ngIf="submitted && f.noOfResources.errors" class="invalid-feedback">
+                                                <div *ngIf="f.noOfResources.errors.required">Please Enter Openings</div>
+                                        </div>    
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4">
+                                        <ng-multiselect-dropdown formControlName="jobLocation"
+                                            [placeholder]="'Job Location'" [data]="jobLocations"
+                                            [settings]="multiDropdownSettings" (onSelect)="onItemSelect(6,$event)"
+                                            (onDeSelect)="onDeItemSelect(6,$event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                        <div class="otherfields" [ngClass]="showOtherField_6 ? 'd-block' : 'd-none'"
+                                            id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formcontrolname="ojloc"
+                                                placeholder="Enter Other loc" type="text" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="driveJoiningCri"
+                                            [placeholder]="'Joining Criteria'" [data]="joiningCri"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(9,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                        <div class="otherfields" [ngClass]="showOtherField_9 ? 'd-block' : 'd-none'"
+                                            id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formcontrolname="optech"
+                                                placeholder="Enter Other Tech" type="text" required="">
+                                        </div>
+
+                                    </div>
+                                   
+                                    <!-- formControlName="driveDate" -->
+                                    <div class="col-lg-3 col-md-4" style="margin-top: auto;">
+                                        <mat-form-field>
+                                            <input matInput [matDatepicker]="myPicker1"
+                                            formControlName="driveDate"
+                                            placeholder="Drive Date">
+                                            <mat-datepicker-toggle matSuffix [for]="myPicker1"></mat-datepicker-toggle>
+                                            <mat-datepicker #myPicker1></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <!-- formControlName="nxtFollwpDate" -->
+                                    <div class="col-lg-3 col-md-4" style="margin-top: auto;">
+                                        <mat-form-field>
+                                            <input matInput [matDatepicker]="myPicker2" placeholder="Next Followap Date"
+                                            formControlName="nxtFollwpDate">
+                                            <mat-datepicker-toggle matSuffix [for]="myPicker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #myPicker2></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4">
+                                        <input class="cust_inp_1" formControlName="ddComment"
+                                            placeholder="Enter Remarks" type="text" required="">
+                                    </div>
+
+                                    <!-- To Do Changes Add Contact Person &  NXT FollowUp Date  -->
+                                    <!-- <div class="col-lg-3 col-md-4">
+                                        <input class="cust_inp_1" formControlName="driveTime"
+                                            placeholder="Drive Time" type="text" required="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <input class="cust_inp_1" formControlName="driveTime"
+                                            placeholder="Drive Time" type="text" required="">
+                                    </div> -->
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col-md-12 fwt_500 text-left">Gap Criteria</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <span class="light_gray1 float-left">Enter Educational Gap Criteria</span>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <span class="light_gray1 float-left">Enter Other Gap Criteria</span>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <input class="cust_inp_1" formControlName="eGapYears" placeholder="Years"
+                                            type="text" required="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <input class="cust_inp_1" formControlName="eGapMonths" placeholder="Months"
+                                            type="text" required="">
+                                    </div>
+
+                                    <!-- <div class="col-lg-12">
+                                        <span class="light_gray1 float-left">Enter Other Gap Criteria</span>
+                                    </div> -->
+                                    <div class="col-lg-3 col-md-3">
+                                        <input class="cust_inp_1" formControlName="oGapYears" placeholder="Years"
+                                            type="text" required="">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <input class="cust_inp_1" formControlName="oGapMonths" placeholder="Months"
+                                            type="text" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col-md-12 fwt_500 text-left">Educational Criteria</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="driveEduCri"
+                                            [placeholder]="'Select Degree'" [data]="educationCri"
+                                            [settings]="multiDropdownSettings" (onSelect)="onItemSelect(7,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                        <div class="otherfields" [ngClass]="showOtherField_7 ? 'd-block' : 'd-none'"
+                                            id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formcontrolname="optech"
+                                                placeholder="Enter Other Tech" type="text" required="">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="driveEduBranchCri"
+                                            [placeholder]="'Select Branch'" [data]="branchCri"
+                                            [settings]="multiDropdownSettings" (onSelect)="onItemSelect(8,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                        <div class="otherfields" [ngClass]="showOtherField_8 ? 'd-block' : 'd-none'"
+                                            id=flip>
+                                            <input class="cust_inp_1 bg_gray_2" formcontrolname="optech"
+                                                placeholder="Enter Other Tech" type="text" required="">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4">
+                                        <!-- <select class="w-100 select_style" formControlName="tenMinMark">
+                                                    <option selected>Min marks Req in 10 std</option>
+                                                    <option *ngFor="let mark of tensMarks">
+                                                        {{mark.name}}
+                                                    </option>
+                                                </select> -->
+                                        <ng-multiselect-dropdown formControlName="tenMinMark"
+                                            [placeholder]="'Min marks Req in 10 std'" [data]="tensMarks"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="twelveMinMark"
+                                            [placeholder]="'Min marks Req in 12 std'" [data]="twelveMarks"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <!-- <select class="w-100 select_style" formControlName="diplomaMinMark">
+                                                    <option selected>Min marks Req in Diploma</option>
+                                                    <option *ngFor="let mark of diplomaMarks">
+                                                        {{mark.name}}
+                                                    </option>
+                                                </select> -->
+                                        <ng-multiselect-dropdown formControlName="diplomaMinMark"
+                                            [placeholder]="'Min marks Req in Diploma'" [data]="diplomaMarks"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+
+                                        <ng-multiselect-dropdown formControlName="degreeMinMark"
+                                            [placeholder]="'Min marks Req in Degree'" [data]="degreeMarks"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <!-- <select class="w-100 select_style" formControlName="pgMinMark">
+                                                    <option selected>Min marks Req in PG</option>
+                                                    <option *ngFor="let mark of pgMarks">
+                                                        {{mark.name}}
+                                                    </option>
+                                                </select> -->
+                                        <ng-multiselect-dropdown formControlName="pgMinMark"
+                                            [placeholder]="'Min marks Req in PG'" [data]="pgMarks"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <!-- <select class="w-100 select_style" formControlName="passYear">
+                                                    <option selected>Passout Year Cri</option>
+                                                    <option *ngFor="let year of years">
+                                                        {{year.name}}
+                                                    </option>
+                                                </select> -->
+                                        <ng-multiselect-dropdown formControlName="passYear"
+                                            [placeholder]="'Passout Year Cri'" [data]="years"
+                                            [settings]="multiDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col-md-12 fwt_500 text-left">Select Students you want to add for this
+                                        drive</div>
+                                </div>
+                                <div class="row student_list">
+                                    <div class="col-lg-12 col-md-12">
+
+                                        <ng-multiselect-dropdown class="w-50" formControlName="studList"
+                                            [placeholder]="'Select Batch'" [data]="batches"
+                                            [settings]="singleDropdownSettings" (onSelect)="onItemSelect(-1,$event)"
+                                            (onDeSelect)="onDeItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                                        </ng-multiselect-dropdown>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="table-responsive">
+                                            <div class="text-left">Added Students in drive:
+                                                <span><a class="" routerLink=""
+                                                        routerLinkActive="active">{{addedStudCount}}</a></span>
+
+                                            </div>
+                                            <table class="table">
+                                                <thead class="bg_gray_2">
+                                                    <tr>
+                                                        <th>Firstname</th>
+                                                        <th>Lastname</th>
+                                                        <th colspan="2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let student of students">
+                                                        <td> {{student.fname}}</td>
+                                                        <td>{{student.lname}}</td>
+                                                        <td><button
+                                                                class="btn_tq_bg_gray_1 btn-sm tq_button tq_button_sm mx-auto">View
+                                                                Details</button></td>
+                                                        <td>
+                                                            <button (click)="addStudToDrive(this)"
+                                                                class="btn_tq_bg btn-sm tq_button tq_button_sm mx-auto">Add
+                                                                To Drive</button>
+                                                            <span class="d-none">Added</span>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear_10"></div>
+                            <button type="submit" class="btn_tq_grad_1 tq_button mx-auto">Submit</button>
+                            <div class="clear_10"></div>
+                        </form>
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="selected_students_cart d-none"><i class="fas fa-users"></i></div>
+</div>

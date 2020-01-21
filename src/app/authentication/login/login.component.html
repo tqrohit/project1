@@ -1,0 +1,40 @@
+<div class="authentication_div clearfix">
+    <particles class="loginbg" [width]="width" [height]="height" [params]="params"></particles>
+    <div class="loginMain container mt-5">
+        <div class="clear_40"></div>
+        <div class="row mt-5 mb-5 tq_box_shadow">
+            <div class="col-md-5 p-0">
+                <div class="card h-100 login_image clearfix  form_login_page">
+
+                </div>
+            </div>
+            <div class="col-md-7 p-0">
+                <div class="card">
+
+                    <h5 class="card-header text-center py-4">
+                        <strong>Log in </strong>
+                    </h5>
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+                        <form class="w-75 mx-auto text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                           
+                            <input class="cust_inp_1" formControlName="userName" placeholder="Username" type="text" required="">
+                           
+                            <input class="cust_inp_1" formControlName="password" placeholder="Password" type="password" required="">
+
+                            <a class="float-right" routerLink="/register" routerLinkActive="active">Forgot Password?</a>
+                            <div class="clear_10"></div>
+                            <button type="submit" class="btn_tq_grad_1 w-100 tq_button mx-auto">Submit</button>
+                            <div class="clear_10"></div>
+                            <a class="float-right" routerLink="/register" routerLinkActive="active">Register</a>
+                            <div class="clear_30"></div>
+                        </form>
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
